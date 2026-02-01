@@ -1,0 +1,63 @@
+[versions]
+agp = "8.4.0"
+
+# Kotlin version - THE CORRECT VERSION
+kotlin = "2.0.21"
+
+# KSP (Kotlin Symbol Processing) version - MUST match Kotlin 2.0.21
+ksp = "2.0.21-1.0.25" # هذا هو الإصدار الصحيح لـ KSP مع Kotlin 2.0.21
+
+# Compose Compiler version - CRUCIAL. It's often bundled or implicitly linked with Kotlin version
+# If the project's original compose-compiler was here, ensure it matches 2.0.x toolchain or remove it if not needed directly
+# For Kotlin 2.0.21, the compose compiler is usually managed internally, so we don't need a specific 'compose-compiler' version here
+# Just ensure compose-bom is up-to-date
+compose-bom = "2024.04.00" # Use a very recent BOM for Kotlin 2.0.21 compatibility
+
+# AndroidX libraries
+androidx-activity-compose = "1.8.2"
+androidx-core-ktx = "1.12.0"
+androidx-espresso-core = "3.5.1"
+androidx-junit = "1.1.5"
+androidx-lifecycle-runtime-ktx = "2.7.0"
+androidx-lifecycle-viewmodel-compose = "2.7.0"
+androidx-material3 = "1.2.0"
+androidx-navigation-compose = "2.7.7"
+
+# Room Database versions
+room = "2.6.1"
+
+# Testing
+junit = "4.13.2"
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso-core" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-material3" }
+androidx-ui = { module = "androidx.compose.ui:ui" }
+androidx-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+
+# Room Database libraries
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation-compose" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle-viewmodel-compose" }
+
+# Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# THIS IS THE KEY CHANGE FOR COMPOSE PLUGIN. Using version.ref = "kotlin" will automatically pick up the 2.0.21 compatible compose compiler.
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
