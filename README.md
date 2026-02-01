@@ -1,51 +1,21 @@
-# Student Task Manager 📚✨
+Student Task Manager is a modern Android application built as part of an intensive personal challenge to rebuild strong Android development fundamentals using the latest Android stack. The goal of this project is to simulate a real-world task management app while applying clean architecture principles and modern development practices.
 
-An Android application designed to help students and anyone manage their daily tasks efficiently. Built using modern Android development best practices with Kotlin and Jetpack Compose. This project demonstrates core mobile development concepts from UI design to local data persistence.
+This app allows students (or any user) to manage daily tasks in a simple, fast, and reliable way. Tasks are stored locally using Room Database, and the UI is built entirely with Jetpack Compose following a state-driven approach.
 
-## Features 🚀
+The project focuses on understanding how real Android apps are structured, how data flows from the database to the UI, and how state is properly managed inside Compose.
 
--   **Task Creation:** Easily add new tasks with a title (mandatory) and an optional description.
--   **Task List Display:** View all your tasks in a clean, scrollable list.
--   **Task Completion Toggle:** Mark tasks as completed or pending using a checkbox. Completed tasks are visually struck through.
--   **Task Deletion:** Remove tasks from your list with a dedicated delete button.
--   **Data Persistence:** All tasks are saved locally using Room Database, ensuring your data is retained even after closing the app.
--   **Navigation:** Seamless navigation between the task list and the add task screen using Jetpack Compose Navigation.
--   **Empty State UI:** A user-friendly message is displayed when there are no tasks.
--   **Light/Dark Mode Support:** The app's theme adapts automatically to the device's system-wide light or dark mode settings.
--   **Input Validation:** Basic validation for task title to ensure meaningful task creation.
+Technologies used in this project include Kotlin as the main programming language, Jetpack Compose for building a fully declarative UI, MVVM architecture to separate concerns and keep the code maintainable, Room Database for local data persistence, ViewModel for state management and lifecycle awareness, and Jetpack Navigation for moving between screens.
 
-## Technologies Used 🛠️
+Main features of the application include adding new tasks with a title, displaying tasks in a dynamic list, saving tasks locally on the device, navigating between multiple screens, and reactive UI updates based on state changes.
 
--   **Kotlin:** The primary programming language for Android development.
--   **Jetpack Compose:** Modern toolkit for building native Android UI.
--   **Jetpack Navigation Compose:** For managing in-app navigation between screens.
--   **Room Database:** An abstraction layer over SQLite to provide robust local data persistence.
--   **ViewModel:** Part of Android Jetpack's Architecture Components, used for UI-related data management and lifecycle awareness.
--   **Kotlin Coroutines & Flow:** For asynchronous programming and observing database changes.
--   **Material Design 3:** For consistent and modern UI components.
+This project was built as part of a one-month challenge to prepare for Android internships and strengthen practical skills. Each feature was implemented with learning in mind, focusing on understanding how things work internally rather than just making them run.
 
-## Screenshots 📸
+Future improvements planned for the project include task editing functionality, task priority levels, search and filtering, UI/UX polishing and animations, and possibly cloud sync in later versions.
 
-![Student Task Manager - Main Screen]([https://ibb.co/bh2pQqh](https://image2url.com/r2/default/images/1769969623156-f722ccd8-10f1-4336-9e6d-a5ffcafc48fb.png))
-![Student Task Manager - Add Task Screen]([https://ibb.co/S7tgB4wv](https://image2url.com/r2/default/images/1769969672260-785d35f5-ea08-44bb-bc81-54033a1dacf2.png))
-![Student Task Manager - Main Screen After adding]([https://ibb.co/PGctkL5Y](https://image2url.com/r2/default/images/1769969723714-82e18cdf-8058-42bd-8a36-a4fc4e993fdf.png))
+To run the project, simply clone the repository, open it using Android Studio, let Gradle sync, and run the app on an emulator or physical device.
 
-## Getting Started (Local Setup) 🧑‍💻
+<img width="120" height="240" alt="Screenshot_20260201_204917" src="https://github.com/user-attachments/assets/434a5d16-503b-44f7-ab73-6d3afe4e54e0" /> (Home screen)
+<img width="120" height="240" alt="Screenshot_20260201_205009" src="https://github.com/user-attachments/assets/c8578d3e-20a7-48cd-ba2e-35d5b01e141a" /> (Add task screen)
+<img width="120" height="240" alt="Screenshot_20260201_205144" src="https://github.com/user-attachments/assets/0676f7d3-a4a3-4aee-9e6c-b2efe8b27bc4" /> (Home screen after adding tasks)
 
-To get a copy of the project up and running on your local machine for development and testing purposes:
 
-1.  **Clone the repository:**
-    git clone [https://github.com/05-M/Student-Task-Manager]
-2.  **Open in Android Studio:** Open the cloned project in Android Studio (version Jellyfish | 2023.3.1 or newer is recommended).
-3.  **Sync Gradle:** Allow Gradle to sync and download all necessary dependencies, This may take a few minutes for the first sync.
-4.  **Run on emulator or device:** Build and run the app on an Android emulator or a physical device.
-
-## Contributing 🤝
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
